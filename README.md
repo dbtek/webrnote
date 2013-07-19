@@ -13,6 +13,6 @@ Requirements
 
 Runing
 --------------
-git clone https://github.com/dbtek/webrnote.git
-cd webrnote
-./webrnote.py
+	git clone https://github.com/dbtek/webrnote.git
+	cd webrnote
+	./webrnote.py

@@ -6,7 +6,7 @@ import ctypes
 
 
 
-libsoup = ctypes.CDLL('lib/libsoup-gnome-2.4.so.1')
+libsoup = ctypes.CDLL('/usr/lib/i386-linux-gnu/libsoup-gnome-2.4.so.1')
 libwebkit = ctypes.CDLL('/usr/lib/libwebkitgtk-1.0.so.0')
 
 

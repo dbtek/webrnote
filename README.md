@@ -16,7 +16,7 @@ Requirements
 - gir1.2-webkit-3.0
 - Also an Evernote account
 
-Runing
+Running
 --------------
 	git clone https://github.com/dbtek/webrnote.git
 	cd webrnote

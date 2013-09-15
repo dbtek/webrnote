@@ -1,36 +1,34 @@
 #!/usr/bin/env python
 
-import gtk
-import webkit
 import ctypes
 
+import gi
+gi.require_version('WebKit', '3.0')
+from gi.repository import Gtk, WebKit, Soup
 
 
-libsoup = ctypes.CDLL('/usr/lib/i386-linux-gnu/libsoup-gnome-2.4.so.1')
-libwebkit = ctypes.CDLL('/usr/lib/libwebkitgtk-1.0.so.0')
 
-
-webView = webkit.WebView()
+webView = WebKit.WebView()
 webView.open('https://www.evernote.com/Home.action')
-window = gtk.Window()
+window = Gtk.Window()
 
-icon_theme=gtk.icon_theme_get_default()
+icon_theme=Gtk.IconTheme.get_default()
 window.set_icon(icon_theme.load_icon("evernote", 96, 0))
 
 window.set_size_request(1000,600)
 window.set_title('Webrnote - Simple WebView Client for Evernote')
 
-window.connect("destroy",window.destroy)
-window.connect("delete_event", lambda w,e: gtk.main_quit())
+window.connect("delete-event", Gtk.main_quit)
 
-s = gtk.ScrolledWindow()
+s = Gtk.ScrolledWindow()
 
 s.add(webView)
 window.add(s)
 
-session = libwebkit.webkit_get_default_session()
-cookiejar = libsoup.soup_cookie_jar_text_new('cookies/cookies.txt',False)
-libsoup.soup_session_add_feature(session, cookiejar)
+cookiejar = Soup.CookieJarText.new("cookies/cookies.wbr", False)
+cookiejar.set_accept_policy(Soup.CookieJarAcceptPolicy.ALWAYS)
+session = WebKit.get_default_session()
+session.add_feature(cookiejar)
 
 window.show_all()
-gtk.mainloop()
+Gtk.main();

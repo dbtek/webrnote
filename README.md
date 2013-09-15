@@ -2,13 +2,13 @@ Webrnote
 ========
 About
 --------------
-Simple GTK Webview Client for Evernote
-
+Simple GTK+ 3 Webview App for Evernote  
+v 0.2 - (Please check requirements, moved to GTK+ 3)
 
 Requirements
 ---------------------
 - Python
-- libwebkitgtk
+- gir1.2-webkit-3.0
 - Also an Evernote account
 
 Runing

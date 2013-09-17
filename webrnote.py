@@ -13,7 +13,7 @@ webView.open('https://www.evernote.com/Home.action')
 window = Gtk.Window()
 
 icon_theme=Gtk.IconTheme.get_default()
-if icon_theme.load_icon("evernote", 96, 0) : window.set_icon(icon_theme.load_icon("evernote", 96, 0))
+if icon_theme.lookup_icon("evernote", 96, 0) : window.set_icon(icon_theme.load_icon("evernote", 96, 0))
 
 window.set_size_request(1000,600)
 window.set_title('Webrnote - Simple WebView Client for Evernote')
